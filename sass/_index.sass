@@ -1,0 +1,201 @@
+//body
+body
+    background-color: $primary
+
+//clock-face
+.clock
+    background-color: $secondary
+    width: $clock-leng
+    height: $clock-leng
+    margin: 100px auto 0
+    position: relative
+    border-radius: 60px
+.clock-face
+    background-color: $primary
+    width: $face-leng
+    height: $face-leng
+    top: ($clock-leng - $face-leng) / 2 - 3
+    left: ($clock-leng - $face-leng) / 2 - 3
+    border: 3px solid #212f0b
+    border-radius: $face-leng/2
+    position: relative
+.index-circle
+    width: $index-radius * 2
+    height: $index-radius * 2
+    top: $face-leng/2 - $index-radius
+    left: $face-leng /2- $index-radius
+    position: relative
+    border-radius: $index-radius
+.am
+    width: $am-radius
+.pm
+    width: $pm-radius
+.hour
+    width: 0
+    height: 0
+    position: relative
+.hour-num
+    font-size: $hour-size
+    color: #899389
+    text-align: center
+    line-height: $hour-lh
+    width: 2 * $hour-size
+    position: absolute
+    top: -($hour-size * $hour-lh)/2
+    left: -$hour-size
+.index
+    width: 0
+    height: 0
+    position: relative
+.bar
+    height: $bar-height
+    width: 1px
+    background-color: $tertiary
+    position: absolute
+    top: -$bar-height/2
+    left: -0.5px
+.star
+    height: $star-size
+    width: $star-size
+    background-color: $tertiary
+    top: -$star-size/2
+    left: -$star-size/2
+    position: relative
+    .tl, .tr, .bl, .br
+        height: $star-size
+        width: $star-size
+        border-radius: $star-size/2
+        background-color: $primary
+        position: absolute
+    .tl
+        top: -$star-size/2
+        left: -$star-size/2
+    .tr
+        top: -$star-size/2
+        left: $star-size/2
+    .bl
+        top: $star-size/2
+        left: -$star-size/2
+    .br
+        top: $star-size/2
+        left: $star-size/2
+.dot
+    width: 2px
+    height: 2px
+    border-radius: 1px
+    background-color: #fff
+    position: absolute
+
+//hand
+.hand
+    width: 0
+    height: 0
+    top: $clock-leng/2
+    left: $clock-leng/2
+    position: absolute
+.hand-hr, .hand-min, .hand-sec
+    transform-origin: center bottom
+.hand-hr
+    width: $hand-h-w
+    height: $hand-h-h
+    position: absolute
+    top: -$hand-h-h
+    left: -$hand-h-w/2
+    .stick
+        width: $hand-h-w
+        height: $hand-h-h
+        background-color: #ffffff
+    .deco
+        width: $hand-h-w/4
+        height: $hand-h-h/3
+        background-color: $primary
+        position: absolute
+        top: $hand-h-h/10
+        left: 3 * $hand-h-w/8
+.hand-min
+    width: $hand-m-w
+    height: $hand-m-h
+    position: absolute
+    top: -$hand-m-h
+    left: -$hand-m-w/2
+    .stick
+        width: $hand-m-w
+        height: $hand-m-h + $hand-m-w/2
+        background-color: $tertiary
+        border-radius: $hand-m-w/2
+        position: relative
+    .deco
+        width: $hand-m-w/8
+        height: $hand-m-h/3
+        background-color: #ffffff
+        position: absolute
+        bottom: $hand-m-w/2
+        left: 7 * $hand-m-w/16
+.hand-sec
+    width: $hand-s-w
+    height: $hand-s-h
+    position: absolute
+    top: -$hand-s-h
+    left: -$hand-s-w/2
+    transition: transform 1s linear
+    .stick1
+        width: 10 * $hand-s-w/18
+        height: 13 * $hand-s-h/28
+        border-right: $hand-s-w/9 solid $quaternary
+    .stick2
+        width: 1.4142 * $hand-s-h/16 
+        height: $hand-s-w/9
+        position: absolute
+        top: 13 * $hand-s-h/28 - $hand-s-w/9
+        left: 8 * $hand-s-w/18
+        background-color: $quaternary
+        transform-origin: left bottom
+        transform: rotate(45deg)
+    .stick3
+        width: $hand-s-w/9
+        height: 1.4142 * $hand-s-h/8 + 2 * $hand-s-w/9
+        position: absolute
+        top: 13 * $hand-s-h/28 + $hand-s-h/16 - 1.4142 * $hand-s-w/18
+        left: (8 + 1.4142) * $hand-s-w/18 + $hand-s-h/16
+        background-color: $quaternary
+        transform-origin: left top
+        transform: rotate(45deg)
+    .stick4
+        width: 1.4142 * $hand-s-h/16
+        height: $hand-s-w/9
+        position: absolute
+        top: 13 * $hand-s-h/28 - $hand-s-w/9 + 3 * $hand-s-h/16 + 1.4142 * $hand-s-w/9 - 0.1px
+        left: 8 * $hand-s-w/18 - $hand-s-h/16 + 0.1px
+        background-color: $quaternary
+        transform-origin: left bottom
+        transform: rotate(45deg)
+    .stick5
+        width: 9 * $hand-s-w/16
+        height: 2 * $hand-s-h/7 - 1.4142 * $hand-s-w/18
+        border-right: $hand-s-w/9 solid $quaternary
+        position: absolute
+        top: 13 * $hand-s-h/28 + $hand-s-h/4 + 1.4142 * $hand-s-w/18
+    .spot1
+        width: 8px
+        height: 8px
+        border-radius: 4px
+        background-color: $quaternary
+        position: absolute
+        top: -4px
+        left: $hand-s-w/2 - 4px
+    .spot2
+        width: 6px
+        height: 6px
+        border-radius: 3px
+        border: 1px solid $primary
+        position: absolute
+        top: -3px
+        left:  $hand-s-w/2 - 3px
+.pin
+    width: $hand-m-w/2
+    height: $hand-m-w/2
+    border-radius: $hand-m-w/4
+    background-color: #ffffff
+    position: relative
+    top: -$hand-m-w/4
+    left: -$hand-m-w/4
